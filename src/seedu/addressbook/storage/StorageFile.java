@@ -48,6 +48,14 @@ public class StorageFile {
     public final Path path;
 
     /**
+     *
+     * @return true if the storage file exist in the path, else return false
+     */
+    public boolean isExist(){
+    	return path.toFile().exists();
+    }
+    
+    /**
      * @throws InvalidStorageFilePathException if the default path is invalid
      */
     public StorageFile() throws InvalidStorageFilePathException {
