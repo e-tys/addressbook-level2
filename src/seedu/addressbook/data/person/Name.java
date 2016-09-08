@@ -9,12 +9,13 @@ import java.util.List;
  * Represents a Person's name in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
  */
-public class Name {
+public class Name implements Printable {
 
     public static final String EXAMPLE = "John Doe";
     public static final String MESSAGE_NAME_CONSTRAINTS = "Person names should be spaces or alphabetic characters";
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alpha} ]+";
-
+    public static final String NAME_PRINTABLE = "Name: ";
+    
     public final String fullName;
 
     /**
@@ -60,5 +61,12 @@ public class Name {
     public int hashCode() {
         return fullName.hashCode();
     }
-
+    
+    /**
+     * Returns a concatenated version of the printable strings of each object.
+     */
+    @Override
+    public String getPrintableString() {
+        return NAME_PRINTABLE + fullName;
+    }
 }

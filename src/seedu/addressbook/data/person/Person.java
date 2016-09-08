@@ -83,5 +83,16 @@ public class Person implements ReadOnlyPerson {
     public String toString() {
         return getAsTextShowAll();
     }
-
+    
+    /**
+     * Consolidate all printable data into one string
+     */
+    public String getPrintableString(Printable...printables){
+        final StringBuilder builder = new StringBuilder();
+        
+        for (Printable p : printables) { 
+            builder.append(p.getPrintableString());
+        }
+        return builder.toString();
+    }
 }
